@@ -1,10 +1,16 @@
-import { FC } from "react";
-import { Navbar } from "../navbar/navbar";
+import { PropsWithChildren } from "react";
+import Navbar from "../navbar/navbar";
 
-export const Applayout: FC = () => {
+export default function Applayout({ children }: PropsWithChildren) {
   return (
-    <header className="bg-white">
-      <Navbar />
-    </header>
+    <main className="h-screen">
+      <header className="bg-white">
+        <Navbar />
+      </header>
+
+      {children}
+
+      <footer></footer>
+    </main>
   );
-};
+}
